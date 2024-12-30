@@ -1,0 +1,100 @@
+/* Galeri Utama */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Gambar dalam galeri (Normal - Desktop) */
+.gallery-image {
+  width: 250px; /* Ukuran lebih besar */
+  height: 250px; /* Ukuran lebih besar */
+  object-fit: cover;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.1);
+}
+
+/* Tombol Filter */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  gap: 10px;
+}
+
+.filter-buttons button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 200px;
+}
+
+.filter-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.filter-buttons button:active {
+  transform: scale(0.98);
+}
+
+/* Responsif: Tampilan untuk perangkat kecil */
+@media (max-width: 768px) {
+  /* Tata letak galeri berubah ke arah vertikal */
+  .gallery-container {
+    display: flex;
+    flex-direction: column; /* Susun vertikal */
+    align-items: center;
+  }
+
+  .gallery-image {
+    width: 100%; /* Sesuaikan lebar gambar dengan kontainer */
+    max-width: 300px; /* Maksimal ukuran gambar */
+    height: auto; /* Tinggi menyesuaikan */
+  }
+
+  /* Tombol filter kembali normal */
+  .filter-buttons button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+  }
+
+  .filter-buttons button:hover {
+    background-color: #0056b3;
+  }
+
+  .filter-buttons button:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Responsif: Tampilan untuk perangkat sangat kecil */
+@media (max-width: 480px) {
+  .gallery-image {
+    width: 90%; /* Ukuran hampir penuh layar */
+  }
+
+  .filter-buttons button {
+    font-size: 16px; /* Perkecil teks tombol */
+    padding: 8px 16px;
+  }
+}

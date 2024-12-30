@@ -1,0 +1,5 @@
+.calendar-iframe {
+  width: 100%;
+  height: 600px; /* Atur tinggi sesuai kebutuhan */
+  border: 0;
+}

@@ -1,0 +1,130 @@
+/* Base styles for the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #213555; /* Blue background */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Increased space between items */
+  padding-left: 0; /* Remove any default padding */
+  margin: 0; /* Ensure no extra margin */
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px; /* Slightly larger font */
+  padding: 10px 15px; /* Add padding to create space around the links */
+  border-radius: 4px; /* Optional: rounded corners for links */
+  transition: background-color 0.3s ease; /* Optional: smooth background transition */
+}
+
+.nav-links a:hover {
+  background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* Navbar items when hamburger is active */
+.nav-links.active {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: #1e3a8a; /* Blue background */
+  padding: 20px;
+  text-align: center;
+  z-index: 100; /* Ensure it appears above other elements */
+}
+
+.nav-links.active li {
+  margin: 15px 0; /* Increased vertical spacing for items */
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 101; /* Ensure it stays above the menu */
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0; /* Add space between lines */
+  transition: all 0.3s ease; /* Smooth animation for line transitions */
+}
+
+/* Active hamburger animation */
+.line1.active {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.line2.active {
+  opacity: 0; /* Hide the middle line */
+}
+
+.line3.active {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide by default */
+    width: 100%;
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger icon */
+  }
+}
+
+/* Reset navbar layout for larger screens */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+    position: static; /* Reset positioning */
+    flex-direction: row; /* Horizontal layout */
+    background-color: transparent; /* Remove background */
+    padding: 0; /* Reset padding */
+  }
+
+  .nav-links.active {
+    display: flex; /* Ensure active class does not affect layout */
+  }
+
+  .hamburger {
+    display: none; /* Hide hamburger icon */
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Atur jarak antar logo */
+}
+
+.logo img {
+  height: 100px; /* Ukuran default logo */
+  object-fit: contain;
+}
+
+.logo img:first-child {
+  height: 125px; /* Perbesar hanya logo Lions Badminton */
+}
+
+
+
